@@ -39,7 +39,7 @@
      */
     @if(myVar) { // or @if(myVar === true)
       .class-a-b-a { 
-        Also some deeper nesting with an if` 
+        Also some deeper nesting with an if
       }
     }
     @else {
