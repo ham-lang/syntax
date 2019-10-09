@@ -1,0 +1,51 @@
+/* This is a div element with:
+ * - class example 
+ * - id root
+ * - attribute data-test and the value wow
+ */
+.example#root[data-test="wow"] {
+  // Comments (Invisible for HTML)
+  //- Comments (Visible for HTML)
+
+  /*
+   * or multiline comments
+   */
+
+  /*-
+   * or multiline comments targeted for HTML
+   */
+
+  .text-container#text-and-brackets-example {
+    // With K&R style brackets
+    p {
+      some "quoted" `something` text
+    }
+    // Or with Allman style brackets
+    p 
+    {      
+      some "quoted" `something` ${evaluationVars} and more text
+      //- Also comments don't intersect concatenation they are placed on top of 
+      //- concatenated strings
+      and a inline element $(span { inline text }) wow
+    }
+  }
+  .class-a-a { Whos little text is in the same line as the selector ? }
+  .class-a-b { 
+    And another $(.important { feature })
+
+    /*
+     * In case we parse variables to the parser we can access them and have 
+     * simple control structures like if/else/for/while/set
+     */
+    @if(myVar) { // or @if(myVar === true)
+      .class-a-b-a { 
+        Also some deeper nesting with an if` 
+      }
+    }
+    @else {
+      .class-a-b-a { 
+        Also some deeper nesting with an else
+      }
+    }
+  }
+}
